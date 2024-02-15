@@ -4,11 +4,22 @@ import fi.tanakharlamova.calcapp.service.ResultWriterService;
 import fi.tanakharlamova.calcapp.util.Calculator;
 
 public class _Main {
-    public static void main(String[] args){
-        System.out.println(ResultWriterService.printResult(11, 7, Calculator.calculateSum(11,7), Calculator.getNameSum()));
-        System.out.println(ResultWriterService.printResult(12, 2, Calculator.calculateDifference(12,2), Calculator.getNameDiff()));
-        System.out.println(ResultWriterService.printResult(10, 3, Calculator.calculateMultiplication(10,3), Calculator.getNameMultiplication()));
+
+    public static String getNameSum(){
+        return "Sum";
     }
 
+    public static String getNameDiff(){
+        return "Difference";
+    }
 
+    public static String getNameMultiplication(){
+        return "Multiplication";
+    }
+
+    public static void main(String[] args){
+       ResultWriterService.printResult(10, 6, Calculator.calculateSum(10,6), getNameSum());
+        ResultWriterService.printResult(10, 6, Calculator.calculateDifference(10,6), getNameDiff());
+        ResultWriterService.printResult(10, 6, Calculator.calculateMultiplication(10,6), getNameMultiplication());
+    }
 }
